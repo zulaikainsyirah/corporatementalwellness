@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CORPORATE MENTAL WELLNESS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===================================================== */
+/* GLOBAL */
+/* ===================================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#111827,#1e293b);
+color:white;
+overflow-x:hidden;
+transition:0.5s;
+}
+
+/* ===================================================== */
+/* THEME MODES */
+/* ===================================================== */
+
+body.calm{
+background:linear-gradient(135deg,#caf0f8,#90e0ef,#48cae4);
+color:#073b4c;
+}
+
+body.soft{
+background:linear-gradient(135deg,#f5d9ff,#e0aaff,#ffc8dd);
+color:#3c1642;
+}
+
+/* ===================================================== */
+/* NAVBAR */
+/* ===================================================== */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+z-index:999;
+}
+
+.logo{
+font-size:1.2rem;
+font-weight:700;
+}
+
+.theme-buttons button{
+padding:10px 18px;
+margin-left:10px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+background:rgba(255,255,255,0.08);
+color:white;
+transition:0.4s;
+}
+
+.theme-buttons button:hover{
+transform:scale(1.1);
+background:#9d4edd;
+box-shadow:0 0 25px #c77dff;
+}
+
+/* ===================================================== */
+/* HERO */
+/* ===================================================== */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#c77dff,transparent);
+filter:blur(120px);
+animation:float 8s infinite alternate;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(-50px);
+}
+
+100%{
+transform:translateY(50px);
+}
+
+}
+
+.hero h1{
+font-size:5rem;
+z-index:2;
+text-shadow:0 0 30px #c77dff;
+}
+
+.hero p{
+font-size:1.4rem;
+margin-top:20px;
+z-index:2;
+}
+
+.hero-buttons{
+margin-top:40px;
+z-index:2;
+}
+
+.glow-btn{
+padding:15px 28px;
+margin:10px;
+border:none;
+border-radius:40px;
+background:rgba(255,255,255,0.08);
+color:white;
+cursor:pointer;
+font-size:1rem;
+transition:0.4s;
+}
+
+.glow-btn:hover{
+transform:translateY(-5px) scale(1.05);
+background:#9d4edd;
+box-shadow:0 0 35px #c77dff;
+}
+
+/* ===================================================== */
+/* SECTION */
+/* ===================================================== */
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+font-size:3rem;
+text-align:center;
+margin-bottom:50px;
+text-shadow:0 0 20px #c77dff;
+}
+
+/* ===================================================== */
+/* GRID */
+/* ===================================================== */
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+/* ===================================================== */
+/* CARD */
+/* ===================================================== */
+
+.card{
+background:rgba(255,255,255,0.08);
+padding:25px;
+border-radius:25px;
+backdrop-filter:blur(15px);
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 35px #c77dff;
+}
+
+/* ===================================================== */
+/* IMAGE */
+/* ===================================================== */
+
+.glow-image{
+width:100%;
+border-radius:20px;
+margin-bottom:20px;
+transition:0.4s;
+}
+
+.glow-image:hover{
+transform:scale(1.03);
+box-shadow:0 0 35px #c77dff;
+}
+
+/* ===================================================== */
+/* BUTTON */
+/* ===================================================== */
+
+.big-box-btn{
+width:100%;
+padding:20px;
+border:none;
+margin-top:20px;
+border-radius:20px;
+font-size:1rem;
+background:rgba(255,255,255,0.08);
+color:white;
+cursor:pointer;
+transition:0.4s;
+}
+
+.big-box-btn:hover{
+background:#9d4edd;
+box-shadow:0 0 30px #c77dff;
+transform:translateY(-5px);
+}
+
+/* ===================================================== */
+/* POPUP BOX */
+/* ===================================================== */
+
+.popup-box{
+display:none;
+margin-top:20px;
+padding:20px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+animation:fade 0.5s ease;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ===================================================== */
+/* ICON BOX */
+/* ===================================================== */
+
+.icon-box{
+display:flex;
+align-items:center;
+gap:15px;
+padding:20px;
+background:rgba(255,255,255,0.08);
+border-radius:20px;
+transition:0.4s;
+}
+
+.icon-box:hover{
+transform:translateY(-10px);
+background:#9d4edd;
+box-shadow:0 0 30px #c77dff;
+}
+
+.icon-box img{
+width:70px;
+height:70px;
+}
+
+/* ===================================================== */
+/* FLASHCARD */
+/* ===================================================== */
+
+.flashcard{
+perspective:1000px;
+}
+
+.flash-inner{
+position:relative;
+width:100%;
+height:320px;
+transition:transform 0.8s;
+transform-style:preserve-3d;
+}
+
+.flashcard:hover .flash-inner,
+.flashcard.active .flash-inner{
+transform:rotateY(180deg);
+}
+
+.flash-front,
+.flash-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+border-radius:25px;
+padding:25px;
+background:rgba(255,255,255,0.08);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+.flash-back{
+transform:rotateY(180deg);
+}
+
+.flash-front img{
+width:100px;
+margin-bottom:20px;
+}
+
+/* ===================================================== */
+/* QUIZ */
+/* ===================================================== */
+
+.quiz-container{
+max-width:800px;
+margin:auto;
+background:rgba(255,255,255,0.08);
+padding:30px;
+border-radius:25px;
+}
+
+.quiz-option{
+padding:18px;
+margin-top:15px;
+background:rgba(255,255,255,0.08);
+border-radius:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.quiz-option:hover{
+background:#9d4edd;
+}
+
+.progress{
+height:15px;
+background:#333;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:20px;
+}
+
+.progress-fill{
+height:100%;
+width:0%;
+background:#c77dff;
+}
+
+/* ===================================================== */
+/* ACCORDION */
+/* ===================================================== */
+
+.accordion button{
+width:100%;
+padding:20px;
+margin-top:15px;
+border:none;
+border-radius:15px;
+background:rgba(255,255,255,0.08);
+color:white;
+text-align:left;
+font-size:1rem;
+cursor:pointer;
+transition:0.3s;
+}
+
+.accordion button:hover{
+background:#9d4edd;
+}
+
+.accordion-content{
+display:none;
+padding:20px;
+background:rgba(255,255,255,0.08);
+border-radius:0 0 15px 15px;
+}
+
+/* ===================================================== */
+/* WATER TRACKER */
+/* ===================================================== */
+
+.water-progress{
+width:100%;
+height:20px;
+background:#222;
+border-radius:20px;
+overflow:hidden;
+margin-top:20px;
+}
+
+.water-fill{
+height:100%;
+width:0%;
+background:#4cc9f0;
+}
+
+/* ===================================================== */
+/* MOOD */
+/* ===================================================== */
+
+.moods{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:25px;
+font-size:2rem;
+cursor:pointer;
+}
+
+/* ===================================================== */
+/* FOOTER */
+/* ===================================================== */
+
+footer{
+padding:40px;
+text-align:center;
+background:rgba(0,0,0,0.3);
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.section-title{
+font-size:2rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- ===================================================== -->
+<!-- NAVBAR -->
+<!-- ===================================================== -->
+
+<nav>
+
+<div class="logo">
+CORPORATE MENTAL WELLNESS
+</div>
+
+<div class="theme-buttons">
+
+<button onclick="setTheme('dark')">
+🌙 Dark
+</button>
+
+<button onclick="setTheme('calm')">
+🌊 Calm
+</button>
+
+<button onclick="setTheme('soft')">
+🌸 Soft
+</button>
+
+</div>
+
+</nav>
+
+<!-- ===================================================== -->
+<!-- HERO -->
+<!-- ===================================================== -->
+
+<section class="hero">
+
+<h1>
+CORPORATE MENTAL WELLNESS
+</h1>
+
+<p>
+“A healthier mind creates a healthier workplace.”
+</p>
+
+<div class="hero-buttons">
+
+<button class="glow-btn" onclick="document.querySelectorAll('section')[1].scrollIntoView({behavior:'smooth'})">🚀 Begin Your Wellness Journey</button>
+
+<button class="glow-btn" onclick="document.getElementById('question').scrollIntoView({behavior:'smooth'})">🎯 Take the Wellness Quiz</button>
+
+<button class="glow-btn">
+    💬 Ask the Wellness AI
+    </button>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- INTRODUCTION -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+🧩 What Is Mental Wellness?
+</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<img class="glow-image"
+src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop">
+
+<button class="big-box-btn"
+onclick="showPopup('intro1')">
+
+💼 Workplace Stress Reality
+
+</button>
+
+<div class="popup-box" id="intro1">
+
+Work pressure is real, but burnout should not be normalized. Modern corporate environments often involve long working hours, tight deadlines, and constant pressure that can affect employees’ mental wellbeing.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img class="glow-image"
+src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+
+<button class="big-box-btn"
+onclick="showPopup('intro2')">
+
+🌱 Mental Wellness Awareness
+
+</button>
+
+<div class="popup-box" id="intro2">
+
+This campaign promotes awareness of workplace stress, encourages healthier work habits, and provides interactive tools to help employees better understand and manage their mental wellness.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- WHY MENTAL WELLNESS -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+Why Mental Wellness Matters
+</h2>
+
+<div class="card-grid">
+
+<div class="icon-box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+<div>
+
+<h3>
+💼 Work Productively
+</h3>
+
+<p>
+Positive mental wellness improves productivity.
+</p>
+
+</div>
+
+</div>
+
+<div class="icon-box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+
+<div>
+
+<h3>
+💬 Communicate Effectively
+</h3>
+
+<p>
+Healthy communication supports teamwork.
+</p>
+
+</div>
+
+</div>
+
+<div class="icon-box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3658/3658773.png">
+
+<div>
+
+<h3>
+🔥 Stay Motivated
+</h3>
+
+<p>
+Motivated employees perform better daily.
+</p>
+
+</div>
+
+</div>
+
+<div class="icon-box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png">
+
+<div>
+
+<h3>
+⚡️ Handle Stress Better
+</h3>
+
+<p>
+Stress management supports healthier minds.
+</p>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- NEW INFO CARD 5 -->
+<!-- ===================================================== -->
+
+<div class="icon-box">
+
+    <img src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png">
+    
+    <div>
+    
+    <h3>
+    🤝 Better Relationships
+    </h3>
+    
+    <p>
+    Build healthier teamwork and workplace relationships.
+    </p>
+    
+    </div>
+    
+    </div>
+    
+    <!-- ===================================================== -->
+    <!-- NEW INFO CARD 6 -->
+    <!-- ===================================================== -->
+    
+    <div class="icon-box">
+    
+    <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
+    
+    <div>
+    
+    <h3>
+    🌱 Work-Life Wellness
+    </h3>
+    
+    <p>
+    Healthy work-life balance improves wellbeing and focus.
+    </p>
+    
+    </div>
+    
+    </div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- DID YOU KNOW -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+💡 DID YOU KNOW?
+</h2>
+
+<div class="card-grid">
+
+<div class="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+
+<img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png">
+
+<h3>
+🔥 Burnout
+</h3>
+
+</div>
+
+<div class="flash-back">
+
+<p>
+Chronic workplace stress can lead to <b>burnout</b> and emotional exhaustion.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2917/2917995.png">
+
+<h3>
+🧠 Mental Wellbeing
+</h3>
+
+</div>
+
+<div class="flash-back">
+
+<p>
+Long working hours and constant pressure may negatively affect <b>mental wellbeing</b>.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+<h3>
+📈 Productivity
+</h3>
+
+</div>
+
+<div class="flash-back">
+
+<p>
+Poor mental wellness can reduce focus, motivation, and <b>productivity</b>.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- NEW FLASHCARD 4 -->
+<!-- ===================================================== -->
+
+<div class="flashcard">
+
+    <div class="flash-inner">
+    
+    <div class="flash-front">
+    
+    <img src="https://cdn-icons-png.flaticon.com/512/4149/4149675.png">
+    
+    <h3>
+    ⚖️ Work-Life Balance
+    </h3>
+    
+    </div>
+    
+    <div class="flash-back">
+    
+    <p>
+    Healthy <b>work-life balance</b> helps improve both mental and physical wellbeing.
+    </p>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <!-- ===================================================== -->
+    <!-- NEW FLASHCARD 5 -->
+    <!-- ===================================================== -->
+    
+    <div class="flashcard">
+    
+    <div class="flash-inner">
+    
+    <div class="flash-front">
+    
+    <img src="https://cdn-icons-png.flaticon.com/512/3048/3048122.png">
+    
+    <h3>
+    🤝 Supportive Workplace
+    </h3>
+    
+    </div>
+    
+    <div class="flash-back">
+    
+    <p>
+    Supportive workplaces create healthier, happier, and more motivated employees.
+    </p>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    <!-- ===================================================== -->
+    <!-- NEW FLASHCARD 6 -->
+    <!-- ===================================================== -->
+    
+    <div class="flashcard">
+    
+    <div class="flash-inner">
+    
+    <div class="flash-front">
+    
+    <img src="https://cdn-icons-png.flaticon.com/512/3588/3588658.png">
+    
+    <h3>
+    💡 Stress Awareness
+    </h3>
+    
+    </div>
+    
+    <div class="flash-back">
+    
+    <p>
+    Recognizing stress early can help prevent severe <b>burnout</b> and emotional exhaustion.
+    </p>
+    
+    </div>
+    
+    </div>
+    
+    </div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- COMMON WORKPLACE STRESSORS -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+🏢 Common Workplace Stressors
+</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<img class="glow-image"
+src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40">
+
+<button class="big-box-btn"
+onclick="showPopup('stress1')">
+
+📚 Heavy Workload
+
+</button>
+
+<div class="popup-box" id="stress1">
+
+Too many responsibilities can increase stress levels and emotional exhaustion.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img class="glow-image"
+src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop">
+
+<button class="big-box-btn"
+onclick="showPopup('stress2')">
+
+⏰ Tight Deadlines
+
+</button>
+
+<div class="popup-box" id="stress2">
+
+Pressure to complete tasks quickly may negatively affect employee wellbeing.
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img class="glow-image"
+src="https://images.pexels.com/photos/3760072/pexels-photo-3760072.jpeg">
+
+<button class="big-box-btn"
+onclick="showPopup('stress3')">
+
+💻 Constant Multitasking
+
+</button>
+
+<div class="popup-box" id="stress3">
+
+Handling too many responsibilities at once can reduce focus and productivity.
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- WORKPLACE PRESSURE -->
+<!-- ===================================================== -->
+
+<div class="card">
+
+    <img class="glow-image"
+    src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800">
+    
+    <button class="big-box-btn"
+    onclick="showPopup('stress4')">
+    
+    ⚡ Workplace Pressure
+    
+    </button>
+    
+    <div class="popup-box" id="stress4">
+    
+    High workplace pressure may increase emotional stress and anxiety.
+    
+    </div>
+    
+    </div>
+    
+    <!-- ===================================================== -->
+    <!-- LONG WORKING HOURS -->
+    <!-- ===================================================== -->
+    
+    <div class="card">
+    
+    <img class="glow-image"
+    src="https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg">
+    
+    <button class="big-box-btn"
+    onclick="showPopup('stress5')">
+    
+    🕒 Long Working Hours
+    
+    </button>
+    
+    <div class="popup-box" id="stress5">
+    
+    Working for long hours can affect mental and physical wellbeing.
+    
+    </div>
+    
+    </div>
+    
+    <!-- ===================================================== -->
+    <!-- POOR WORK-LIFE BALANCE -->
+    <!-- ===================================================== -->
+    
+    <div class="card">
+    
+    <img class="glow-image"
+    src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop">
+    
+    <button class="big-box-btn"
+    onclick="showPopup('stress6')">
+    
+    ⚖️ Poor Work-Life Balance
+    
+    </button>
+    
+    <div class="popup-box" id="stress6">
+    
+    Poor balance between work and personal life may increase stress.
+    
+    </div>
+    
+    </div>
+    
+    <!-- ===================================================== -->
+    <!-- HIGH JOB EXPECTATIONS -->
+    <!-- ===================================================== -->
+    
+    <div class="card">
+    
+    <img class="glow-image"
+    src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop">
+    
+    <button class="big-box-btn"
+    onclick="showPopup('stress7')">
+    
+    📈 High Job Expectations
+    
+    </button>
+    
+    <div class="popup-box" id="stress7">
+    
+    High expectations may create pressure and emotional exhaustion.
+    
+    </div>
+    
+    </div>
+    
+    <!-- ===================================================== -->
+    <!-- LACK OF REST -->
+    <!-- ===================================================== -->
+    
+    <div class="card">
+    
+    <img class="glow-image"
+    src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop">
+    
+    <button class="big-box-btn"
+    onclick="showPopup('stress8')">
+    
+    💤 Lack of Rest & Recovery
+    
+    </button>
+    
+    <div class="popup-box" id="stress8">
+    
+    Insufficient rest may reduce focus, energy, and productivity.
+    
+    </div>
+    
+    </div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- SIGNS OF BURNOUT -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+🔥 Signs of Burnout
+</h2>
+
+<div class="card-grid">
+
+<div class="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+😫 Emotional Signs
+</div>
+
+<div class="flash-back">
+
+Feeling emotionally drained<br>
+Easily irritated<br>
+Loss of motivation
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+💤 Physical Signs
+</div>
+
+<div class="flash-back">
+
+Constant fatigue<br>
+Sleep problems<br>
+Low energy levels
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+📉 Work Performance Signs
+</div>
+
+<div class="flash-back">
+
+Reduced productivity<br>
+Difficulty concentrating<br>
+Increased mistakes
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- EFFECTS -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+⚠️ Effects of Poor Mental Wellness
+</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<h3>
+👨‍💼 On Employees
+</h3>
+
+<p>
+Stress and burnout may reduce motivation, focus, confidence, and emotional stability.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+🏢 On Workplace
+</h3>
+
+<p>
+Poor mental wellness can reduce teamwork, communication, and overall workplace productivity.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+❤️ On Physical Health
+</h3>
+
+<p>
+Stress may contribute to headaches, sleep problems, fatigue, and weakened health.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- PREVENTION -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+🛡 Prevention and Support
+</h2>
+
+<div class="card-grid">
+
+<div class="icon-box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2647/2647625.png">
+
+<div>
+
+<h3>
+🧘 Practice Mindfulness
+</h3>
+
+<p>
+Mindfulness techniques help reduce stress and improve focus.
+</p>
+
+</div>
+
+</div>
+
+<div class="icon-box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png">
+
+<div>
+
+<h3>
+💤 Take Regular Breaks
+</h3>
+
+<p>
+Short breaks improve energy and concentration.
+</p>
+
+</div>
+
+</div>
+
+<div class="icon-box">
+
+<img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+
+<div>
+
+<h3>
+💬 Encourage Communication
+</h3>
+
+<p>
+Healthy communication creates supportive workplaces.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- HEALTHY HABITS -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+🌱 Healthy Workplace Habits
+</h2>
+
+<div class="card">
+
+<button class="big-box-btn">
+✔️ Drink Enough Water
+</button>
+
+<button class="big-box-btn">
+✔️ Take Short Breaks
+</button>
+
+<button class="big-box-btn">
+✔️ Sleep 7–8 Hours
+</button>
+
+<button class="big-box-btn">
+✔️ Exercise Regularly
+</button>
+
+<div class="water-progress">
+<div class="water-fill" id="waterFill"></div>
+</div>
+
+<button class="glow-btn" onclick="addWater()">
+💧 +1 Water
+</button>
+
+<p id="waterText">
+0 / 8 Glasses
+</p>
+
+<div class="moods">
+
+<span onclick="showMood('Great! Keep smiling!')">
+😃
+</span>
+
+<span onclick="showMood('You are doing well!')">
+😊
+</span>
+
+<span onclick="showMood('Take some rest today.')">
+😐
+</span>
+
+<span onclick="showMood('Talk to supportive people.')">
+😔
+</span>
+
+<span onclick="showMood('Your mental health matters.')">
+😫
+</span>
+
+</div>
+
+<button class="glow-btn"
+onclick="wellnessTip()">
+
+💡 Today’s Wellness Tip
+
+</button>
+
+<p id="tipText"></p>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- QUIZ -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+🧠 Assess Your Mental Wellness
+</h2>
+
+<div class="quiz-container">
+
+<div class="progress">
+<div class="progress-fill" id="progressFill"></div>
+</div>
+
+<h3 id="question">
+Loading Question...
+</h3>
+
+<div id="answers"></div>
+
+<br>
+
+<button class="glow-btn" onclick="nextQuestion()">
+➡️ Next Question
+</button>
+
+<button class="glow-btn" onclick="restartQuiz()">
+🔄 Restart Quiz
+</button>
+
+<br><br>
+
+<div class="card">
+
+<h3>
+📊 Quiz Result
+</h3>
+
+<p id="quizResult">
+Answer a few questions to better understand your mental well-being at work.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- CONCLUSION -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+🌿 Prioritizing Mental Wellness at Work 🌿
+</h2>
+
+<div class="card">
+
+<img class="glow-image"
+src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg">
+
+<p>
+
+A healthier workplace begins with healthier minds. Recognizing stress early and promoting mental wellness can help create safer, more supportive, and more productive work environments.
+
+<br><br>
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- ETHICS -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+🔒 Ethics, Privacy & References
+</h2>
+
+<div class="accordion">
+
+<button onclick="toggleAccordion(0)">
+🔒 Privacy Policy
+</button>
+
+<div class="accordion-content">
+
+➤ Quiz responses are anonymous and are not permanently stored.
+
+<br><br>
+
+➤ No personal data will be sold, distributed or disclosed to third parties. 
+
+<br><br>
+
+➤ Users are encouraged not to share sensitive medical information.
+
+<br><br>
+
+➤ Information collected from quizzes, chatbots and feedback form is used only for educational and awareness purposes.
+
+<br><br>
+
+➤ User privacy and confidentiality are always maintained throughout the website. 
+
+</div>
+
+<button onclick="toggleAccordion(1)">
+⚖️ Ethics Statement
+</button>
+
+<div class="accordion-content">
+
+➤ This website promotes respectful and stigma-free discussions about mental wellness.
+
+<br><br>
+
+➤ Our campaign encourages healthy communication and emotional support in the workplace.
+
+<br><br>
+
+➤ All information provided is intended for educational and awareness purposes only.
+
+<br><br>
+
+➤ We are committed to protecting user privacy and maintaining academic integrity.
+
+<br><br>
+
+➤ AI and digital tools are used responsibly to support workplace mental wellness awareness.
+
+</div>
+
+<button onclick="toggleAccordion(2)">
+🤖 AI Usage Statement
+</button>
+
+<div class="accordion-content">
+
+➤ We used tools like ChatGPT and Canva AI to help us come up with ideas for our content. These tools also helped us make our language better and create pictures that teach people things for this campaign.
+
+<br><br>
+
+➤ We looked over everything we made with these AI tools. We. Checked it to make sure it was correct and good enough to teach people about safety and health, at work.
+
+</div>
+
+<button onclick="toggleAccordion(3)">
+📚 References
+</button>
+
+<div class="accordion-content">
+
+➤ World Health Organization (2022). Mental health at work.<br><br>
+➤ Occupational Safety and Health Administration (OSHA). Workplace Stress.<br><br>
+➤ Department of Occupational Safety and Health Malaysia (DOSH). Guidelines on Mental Health.<br><br>
+➤ American Psychological Association (2024). Burnout and Stress Management.<br><br>
+➤ National Institute for Occupational Safety and Health (NIOSH). Workplace Mental Health Resources.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- GROUP MEMBERS -->
+<!-- ===================================================== -->
+
+<section>
+
+<h2 class="section-title">
+👥 Group Members
+</h2>
+
+<div class="card-grid">
+
+<div class="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+
+<img src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png">
+
+<h3>
+👤 Nur Zulaika Insyirah Binti Asmadi
+</h3>
+
+</div>
+
+<div class="flash-back">
+
+<h3>
+🎓 Student ID
+</h3>
+
+<p>
+12215224016
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+
+<img src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png">
+
+<h3>
+👤 Siti Nur Sakinah Binti Ahmad Kamal
+</h3>
+
+</div>
+
+<div class="flash-back">
+
+<h3>
+🎓 Student ID
+</h3>
+
+<p>
+12215224045
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+
+<img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png">
+
+<h3>
+👤 Nursayyidi Bahzi Bin Masyijimi
+</h3>
+
+</div>
+
+<div class="flash-back">
+
+<h3>
+🎓 Student ID
+</h3>
+
+<p>
+12215224051
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+
+<img src="https://cdn-icons-png.flaticon.com/512/921/921071.png">
+
+<h3>
+👤 Ussamah Bin Adam Malik
+</h3>
+
+</div>
+
+<div class="flash-back">
+
+<h3>
+🎓 Student ID
+</h3>
+
+<p>
+12215224057
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="flashcard">
+
+<div class="flash-inner">
+
+<div class="flash-front">
+
+<img src="https://cdn-icons-png.flaticon.com/512/921/921089.png">
+
+<h3>
+👤 Nurain Fatihah Binti Zamree
+</h3>
+
+</div>
+
+<div class="flash-back">
+
+<h3>
+🎓 Student ID
+</h3>
+
+<p>
+12215224022
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer>
+
+CORPORATE MENTAL WELLNESS © 2026
+
+</footer>
+
+<script>
+
+/* ===================================================== */
+/* THEME */
+/* ===================================================== */
+
+function setTheme(theme){
+
+document.body.classList.remove('calm','soft');
+
+if(theme === 'calm'){
+document.body.classList.add('calm');
+}
+
+if(theme === 'soft'){
+document.body.classList.add('soft');
+}
+
+}
+
+/* ===================================================== */
+/* POPUP */
+/* ===================================================== */
+
+function showPopup(id){
+
+const popup =
+document.getElementById(id);
+
+popup.style.display =
+popup.style.display === 'block'
+? 'none'
+: 'block';
+
+}
+
+/* ===================================================== */
+/* ACCORDION */
+/* ===================================================== */
+
+function toggleAccordion(index){
+
+const items =
+document.querySelectorAll('.accordion-content');
+
+items[index].style.display =
+items[index].style.display === 'block'
+? 'none'
+: 'block';
+
+}
+
+/* ===================================================== */
+/* WATER */
+/* ===================================================== */
+
+let water = 0;
+
+function addWater(){
+
+if(water < 8){
+
+water++;
+
+document.getElementById('waterFill').style.width =
+(water/8)*100 + '%';
+
+document.getElementById('waterText').innerHTML =
+water + ' / 8 Glasses';
+
+}
+
+}
+
+/* ===================================================== */
+/* MOOD */
+/* ===================================================== */
+
+function showMood(text){
+
+alert(text);
+
+}
+
+/* ===================================================== */
+/* WELLNESS TIP */
+/* ===================================================== */
+
+const tips = [
+
+'Take a short walk.',
+'Drink enough water.',
+'Stretch your body.',
+'Practice deep breathing.',
+'Take regular breaks.'
+
+];
+
+function wellnessTip(){
+
+const random =
+Math.floor(Math.random()*tips.length);
+
+document.getElementById('tipText').innerHTML =
+tips[random];
+
+}
+
+/* ===================================================== */
+/* QUIZ */
+/* ===================================================== */
+
+const questions = [
+
+{
+question:'Do you feel emotionally exhausted after work?',
+answers:['Yes','Sometimes','No']
+},
+
+{
+question:'Do you struggle to sleep because of stress?',
+answers:['Often','Sometimes','Never']
+},
+
+{
+question:'Do you feel mentally tired every day?',
+answers:['Yes','Sometimes','No']
+},
+
+{
+question:'Do workplace conflicts affect your mental wellbeing?',
+answers:['Yes','Sometimes','No']
+},
+
+{
+question:'Do you struggle to sleep because of stress?',
+answers:['Yes','Sometimes','No']
+},
+
+{
+question:'Do you feel supported emotionally in your workplace?',
+answers:['Yes','Sometimes','No']
+},
+
+{
+question:'Do you feel mentally tired every day?',
+answers:['Yes','Sometimes','No']
+},
+
+{
+question:'Do you feel anxious before going to work?',
+answers:['Yes','Sometimes','No']
+},
+
+{
+question:'Do you take enough time to rest after work?',
+answers:['Yes','Sometimes','No']
+},
+
+{
+question:'Do deadlines overwhelm you?',
+answers:['Often','Sometimes','Never']
+},
+
+{
+question:'Do you skip breaks regularly?',
+answers:['Yes','Sometimes','No']
+}
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion(){
+
+const q = questions[currentQuestion];
+
+document.getElementById('question').innerHTML =
+q.question;
+
+document.getElementById('progressFill').style.width =
+((currentQuestion+1)/questions.length)*100 + '%';
+
+const answersDiv =
+document.getElementById('answers');
+
+answersDiv.innerHTML = '';
+
+q.answers.forEach(answer => {
+
+const btn =
+document.createElement('div');
+
+btn.classList.add('quiz-option');
+
+btn.innerHTML = answer;
+
+btn.onclick = () => {
+
+if(answer === 'Yes' || answer === 'Often'){
+
+score += 2;
+
+}else if(answer === 'Sometimes'){
+
+score += 1;
+
+}
+
+};
+
+answersDiv.appendChild(btn);
+
+});
+
+}
+
+function nextQuestion(){
+
+currentQuestion++;
+
+if(currentQuestion < questions.length){
+
+loadQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+function showResult(){
+
+let resultText = '';
+
+if(score <= 3){
+
+resultText =
+'🟢 LOW STRESS LEVEL — Great job maintaining your mental wellness!';
+
+}else if(score <= 6){
+
+resultText =
+'🟡 MODERATE STRESS LEVEL — Remember to take breaks and manage stress positively.';
+
+}else{
+
+resultText =
+'🔴 HIGH STRESS LEVEL — Prioritize self-care and emotional support.';
+
+}
+
+document.getElementById('quizResult').innerHTML =
+resultText;
+
+document.getElementById('question').innerHTML =
+'🎉 Quiz Completed!';
+
+document.getElementById('answers').innerHTML = '';
+
+}
+
+function restartQuiz(){
+
+currentQuestion = 0;
+score = 0;
+
+loadQuestion();
+
+document.getElementById('quizResult').innerHTML =
+'Answer all questions to see your mental wellness result.';
+
+}
+
+loadQuestion();
+
+
+document.querySelectorAll('.flashcard').forEach(card=>{
+ card.addEventListener('click',()=>{
+   card.classList.toggle('active');
+ });
+});
+
+</script>
+<!-- ===================================================== -->
+<!-- AI CHATBOX ASSISTANT -->
+<!-- ===================================================== -->
+
+<div class="chatbot-toggle" onclick="toggleChatbot()">
+    🤖
+    </div>
+    
+    <div class="chatbot-container" id="chatbotContainer">
+    
+    <div class="chatbot-header">
+    
+    <div>
+    🤖 AI Wellness Assistant
+    </div>
+    
+    <button onclick="toggleChatbot()">
+    ✖
+    </button>
+    
+    </div>
+    
+    <div class="chatbot-messages" id="chatbotMessages">
+    
+    <div class="bot-message">
+    Hello 👋<br><br>
+    I am your Mental Wellness Assistant.<br>
+    Ask me about stress, burnout, healthy habits, or workplace wellness.
+    </div>
+    
+    </div>
+    
+    <div class="chatbot-input-area">
+    
+    <input type="text"
+    id="chatInput"
+    placeholder="Type your message...">
+    
+    <button onclick="sendMessage()">
+    Send
+    </button>
+    
+    </div>
+    
+    </div>
+    
+    <style>
+    
+    /* ===================================================== */
+    /* CHATBOT */
+    /* ===================================================== */
+    
+    .chatbot-toggle{
+    
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#9d4edd;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2rem;
+    cursor:pointer;
+    z-index:9999;
+    box-shadow:0 0 25px #c77dff;
+    transition:0.4s;
+    
+    }
+    
+    .chatbot-toggle:hover{
+    
+    transform:scale(1.1);
+    
+    }
+    
+    .chatbot-container{
+    
+    position:fixed;
+    bottom:110px;
+    right:25px;
+    width:350px;
+    height:500px;
+    background:rgba(20,20,30,0.95);
+    border-radius:25px;
+    overflow:hidden;
+    display:none;
+    flex-direction:column;
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 40px #c77dff;
+    z-index:9999;
+    
+    }
+    
+    .chatbot-header{
+    
+    padding:18px;
+    background:#9d4edd;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-weight:600;
+    
+    }
+    
+    .chatbot-header button{
+    
+    background:none;
+    border:none;
+    color:white;
+    font-size:1.2rem;
+    cursor:pointer;
+    
+    }
+    
+    .chatbot-messages{
+    
+    flex:1;
+    padding:15px;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    
+    }
+    
+    .bot-message,
+    .user-message{
+    
+    padding:14px;
+    border-radius:18px;
+    max-width:80%;
+    animation:fade 0.3s ease;
+    
+    }
+    
+    .bot-message{
+    
+    background:rgba(255,255,255,0.1);
+    align-self:flex-start;
+    
+    }
+    
+    .user-message{
+    
+    background:#9d4edd;
+    align-self:flex-end;
+    
+    }
+    
+    .chatbot-input-area{
+    
+    display:flex;
+    padding:15px;
+    background:rgba(255,255,255,0.05);
+    
+    }
+    
+    .chatbot-input-area input{
+    
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:15px;
+    outline:none;
+    background:rgba(255,255,255,0.1);
+    color:white;
+    
+    }
+    
+    .chatbot-input-area button{
+    
+    margin-left:10px;
+    padding:12px 18px;
+    border:none;
+    border-radius:15px;
+    background:#9d4edd;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+    
+    }
+    
+    .chatbot-input-area button:hover{
+    
+    transform:scale(1.05);
+    box-shadow:0 0 15px #c77dff;
+    
+    }
+    
+    @media(max-width:768px){
+    
+    .chatbot-container{
+    
+    width:90%;
+    right:5%;
+    height:480px;
+    
+    }
+    
+    }
+    
+    </style>
+    
+    <script>
+    
+    /* ===================================================== */
+    /* CHATBOT */
+    /* ===================================================== */
+    
+    function toggleChatbot(){
+    
+    const chatbot =
+    document.getElementById('chatbotContainer');
+    
+    if(chatbot.style.display === 'flex'){
+    
+    chatbot.style.display = 'none';
+    
+    }else{
+    
+    chatbot.style.display = 'flex';
+    
+    }
+    
+    }
+    
+    function sendMessage(){
+    
+    const input =
+    document.getElementById('chatInput');
+    
+    const message =
+    input.value.trim();
+    
+    if(message === '') return;
+    
+    const chatbox =
+    document.getElementById('chatbotMessages');
+    
+    /* USER MESSAGE */
+    
+    const userMsg =
+    document.createElement('div');
+    
+    userMsg.classList.add('user-message');
+    
+    userMsg.innerHTML = message;
+    
+    chatbox.appendChild(userMsg);
+    
+    /* BOT RESPONSE */
+    
+    const botMsg =
+    document.createElement('div');
+    
+    botMsg.classList.add('bot-message');
+    
+    let response = '';
+    
+    const lower =
+    message.toLowerCase();
+    
+    if(lower.includes('stress')){
+    
+    response =
+    '💡 Stress can be reduced by taking regular breaks, deep breathing, exercise, and healthy communication.';
+    
+    }else if(lower.includes('burnout')){
+    
+    response =
+    '🔥 Burnout may happen due to chronic stress and overwork. Rest, support, and work-life balance are important.';
+    
+    }else if(lower.includes('sleep')){
+    
+    response =
+    '💤 Sleeping 7–8 hours daily helps improve emotional wellness and focus.';
+    
+    }else if(lower.includes('anxiety')){
+    
+    response =
+    '🧠 Anxiety can be managed through relaxation techniques, mindfulness, and emotional support.';
+    
+    }else if(lower.includes('motivation')){
+    
+    response =
+    '⚡ Staying motivated becomes easier with proper rest, realistic goals, and positive support.';
+    
+    }else if(lower.includes('hello') || lower.includes('hi')){
+    
+    response =
+    '👋 Hello! How are you feeling today?';
+    
+    }else if(lower.includes('sad')){
+    
+    response =
+    '💙 It is okay to feel sad sometimes. Try talking to supportive people and taking care of yourself.';
+    
+    }else if(lower.includes('tips')){
+    
+    response =
+    '🌱 Wellness Tips:<br><br>✔️ Drink water<br>✔️ Take breaks<br>✔️ Sleep enough<br>✔️ Exercise regularly';
+    
+    }else{
+    
+    response =
+    '🤖 I am here to support your mental wellness journey. Try asking about stress, burnout, sleep, motivation, or wellness tips.';
+    
+    }
+    
+    setTimeout(() => {
+    
+    botMsg.innerHTML = response;
+    
+    chatbox.appendChild(botMsg);
+    
+    chatbox.scrollTop =
+    chatbox.scrollHeight;
+    
+    },500);
+    
+    input.value = '';
+    
+    chatbox.scrollTop =
+    chatbox.scrollHeight;
+    
+    }
+    
+    /* ENTER KEY */
+    
+    document.getElementById('chatInput')
+    .addEventListener('keypress',function(e){
+    
+    if(e.key === 'Enter'){
+    
+    sendMessage();
+    
+    }
+    
+    });
+    
+    </script>
+</body>
+</html>
